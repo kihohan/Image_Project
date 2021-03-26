@@ -27,6 +27,7 @@ for file_name in file_names:
     abs_file_path = path + file_name
     img = image.load_img(abs_file_path, target_size=(224, 224))
     y_test.append(file_name.split('.')[0])
+    # numpy로 바꾸면 빠름.
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     if len(x_test) > 0:
